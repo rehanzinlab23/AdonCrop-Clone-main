@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ExtensionCard from "./components/ExtensionCard";
 import ArticleCard from "./components/ArticleCard";
 import SupportCard from "./components/SupportCard";
@@ -13,6 +13,18 @@ import Copyright from "./components/Copyright";
 
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup function to ensure scroll is restored if component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isNavOpen]);
 
   const extensionsData = [
     {
@@ -134,15 +146,15 @@ const App = () => {
       <div id="container">
         {/* Section 1 */}
         <section>
-          <h1 className="block text-center mb-3 font-roboto text-[45px] text-[#373a3c] leading-12.25">
+          <h1 className="block text-center mb-3 font-roboto text-[32px] md:text-[45px] text-[#373a3c] md:leading-12.25">
             <span className="font-thin">Trending</span>{" "}
             <span className="font-medium">Extensions</span>
           </h1>
-          <p className="text-[18px] font-normal font-segoe text-center w-[80%] max-w-3xl my-0 mx-auto leading-7.25 text-[#5f5f5f]">
+          <p className="text-[16px] md:text-[18px] font-normal font-segoe text-center w-full md:w-[80%] max-w-3xl my-0 mx-auto leading-7.25 text-[#5f5f5f]">
             Our Best Video Downloader and MP3 Downloader Extensions
           </p>
           {/* Extension Data */}
-          <div className="mt-15 grid grid-cols-3 gap-10">
+          <div className="mt-10 md:mt-15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             {extensionsData.map((ext) => (
               <ExtensionCard
                 key={ext.id}
@@ -156,11 +168,11 @@ const App = () => {
           </div>
         </section>
         {/* Section 2 */}
-        <section className="my-0 mx-auto w-full max-w-195 py-15 px-0">
-          <h3 className="text-[45px] leading-[49.2px] font-thin block text-center mb-3 font-roboto text-[#373a3c]">
+        <section className="my-0 mx-auto w-full max-w-195 py-10 md:py-15 px-0">
+          <h3 className="text-[32px] md:text-[45px] leading-tight md:leading-[49.2px] font-thin block text-center mb-3 font-roboto text-[#373a3c]">
             Popular Articles
           </h3>
-          <p className="text-[18px] font-normal font-segoe text-center w-[80%] max-w-3xl my-0 mx-auto leading-7.25 text-[#5f5f5f]">
+          <p className="text-[16px] md:text-[18px] font-normal font-segoe text-center w-full md:w-[80%] max-w-3xl my-0 mx-auto leading-7.25 text-[#5f5f5f]">
             Real simple ideas and tips to Downloads Videos from your favorite
             Websites
           </p>
@@ -180,15 +192,15 @@ const App = () => {
           </div>
         </section>
         {/* Section 3 */}
-        <section className="w-full max-w-235 m-0 mx-32.5 h-[577.97px]">
-          <h3 className="text-[45px] leading-[49.2px] font-thin block text-center mb-3 font-roboto text-[#373a3c]">
+        <section className="w-full max-w-235 m-0 md:mx-auto py-10 md:py-15">
+          <h3 className="text-[32px] md:text-[45px] leading-tight md:leading-[49.2px] font-thin block text-center mb-3 font-roboto text-[#373a3c]">
             Support
           </h3>
-          <p className="w-[80%] h-[28.8px] max-w-3xl text-[18px] font-normal font-segoe text-center my-0 mx-auto leading-7.25 text-[#5f5f5f]">
+          <p className="w-full md:w-[80%] md:h-[28.8px] max-w-3xl text-[16px] md:text-[18px] font-normal font-segoe text-center my-0 mx-auto leading-7.25 text-[#5f5f5f]">
             We have a strategy for serving things right
           </p>
           {/* Support */}
-          <div className="mt-15 grid grid-cols-2 gap-10">
+          <div className="mt-10 md:mt-15 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
             {supportData.map((support) => (
               <SupportCard
                 key={support.id}

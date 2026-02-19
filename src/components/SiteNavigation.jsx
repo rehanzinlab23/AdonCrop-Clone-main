@@ -1,16 +1,18 @@
+import { House, Mail, CircleHelp } from "lucide-react";
+
 const SiteNavigation = ({ isNavOpen, navRef }) => {
   return (
     <div
       ref={navRef}
-      className={`z-101 hidden lg:block fixed top-0 left-0 w-full max-h-screen pt-24.5 px-12 pb-12 transition-all duration-500 bg-white shadow-[0_0_50px_0_rgba(1,1,1,0.15)] ${
-        isNavOpen
-          ? "visible translate-y-0 opacity-100"
-          : "invisible -translate-y-5 opacity-0"
-      }`}
+      className={`z-101 fixed top-0 right-0 w-full h-full lg:h-auto lg:max-h-screen overflow-y-auto pt-24.5 px-0 pb-12 transition-all duration-500 bg-white shadow-[0_0_50px_0_rgba(1,1,1,0.15)] ${isNavOpen
+          ? "visible translate-x-0 lg:translate-y-0 opacity-100"
+          : "invisible translate-x-full lg:translate-x-0 lg:-translate-y-5 opacity-0"
+        }`}
     >
-      <div id="container" className="flex flex-col">
-        <div className="visible opacity-100 duration-1000 transition-all ease-in-out flex items-start justify-between">
-          <ul className="flex flex-col">
+      <div className="flex flex-col">
+        {/* Desktop View (lg and above) */}
+        <div className="hidden lg:flex px-6 md:px-12 visible opacity-100 duration-1000 transition-all ease-in-out flex-col md:flex-row items-start justify-between gap-8">
+          <ul className="flex flex-col w-full md:w-auto">
             <li className="text-[14px] text-[#a2a9ba] uppercase font-normal pl-4 leading-6 mb-3">
               Video Downloaders
             </li>
@@ -81,7 +83,7 @@ const SiteNavigation = ({ isNavOpen, navRef }) => {
               </a>
             </li>
           </ul>
-          <ul className="flex flex-col">
+          <ul className="flex flex-col w-full md:w-auto">
             <li className="text-[14px] text-[#a2a9ba] uppercase font-normal pl-4 leading-6 mb-3">
               Music Downloaders
             </li>
@@ -130,7 +132,7 @@ const SiteNavigation = ({ isNavOpen, navRef }) => {
               </a>
             </li>
           </ul>
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full md:w-auto">
             <a href="#" className="mb-0 block w-full max-w-50">
               <span className="block mb-1 text-[14px] font-normal font-segoe leading-5.5 capitalize text-[#403e56]">
                 Blog
@@ -140,7 +142,7 @@ const SiteNavigation = ({ isNavOpen, navRef }) => {
               </span>
             </a>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full md:w-auto">
             <a href="#" className="mb-0 block w-full max-w-50">
               <span className="block mb-1 text-[14px] font-normal font-segoe leading-5.5 capitalize text-[#403e56]">
                 Got Any Question?
@@ -150,6 +152,39 @@ const SiteNavigation = ({ isNavOpen, navRef }) => {
               </span>
             </a>
           </div>
+        </div>
+
+        {/* Mobile View (sm and md) */}
+        <div className="flex lg:hidden flex-col">
+          <ul className="flex flex-col">
+            <li>
+              <a
+                href="#"
+                className="flex items-center py-6 px-10 text-[#05c896] bg-[#f9f9f9] border-l-[6px] border-[#05c896] font-medium font-segoe text-[19px] transition-colors"
+              >
+                <House size={26} strokeWidth={1.5} className="mr-6 text-[#05c896]" />
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="flex items-center py-6 px-10 text-[#373a3c] font-medium font-segoe text-[19px] hover:bg-[#f9f9f9] border-l-[6px] border-transparent transition-colors"
+              >
+                <Mail size={26} strokeWidth={1.5} className="mr-6 text-[#373a3c]" />
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="flex items-center py-6 px-10 text-[#373a3c] font-medium font-segoe text-[19px] hover:bg-[#f9f9f9] border-l-[6px] border-transparent transition-colors"
+              >
+                <CircleHelp size={26} strokeWidth={1.5} className="mr-6 text-[#373a3c]" />
+                Support
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

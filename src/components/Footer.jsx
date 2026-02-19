@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="mt-12 py-15 px-0 border-t border-t-[#efefef]">
       <div id="container">
-        <div className="flex justify-between flex-wrap h-[498.18px]">
+        <div className="flex justify-between flex-wrap">
           {/* 1 */}
           <div id="footer-menu-wrap">
             <ul className="mb-8 h-[242.99px]">

@@ -28,7 +28,7 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
   return (
     <>
       <header className="min-h-20 flex items-center relative z-102 bg-white">
-        <div id="container" className="flex items-center">
+        <div id="container" className="flex items-center justify-between w-full">
           <div className="flex items-center">
             <a
               href="#"
@@ -62,6 +62,27 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
                 </li>
               </ul>
             </div>
+          </div>
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden flex items-center">
+            <button
+              ref={toggleRef}
+              onClick={() => setIsNavOpen(!isNavOpen)}
+              className="flex h-5 w-7 flex-col items-center justify-between p-0 cursor-pointer relative z-103 bg-transparent border-none"
+            >
+              <span
+                className={`h-0.75 w-full rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${isNavOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+              />
+              <span
+                className={`h-0.75 w-full rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${isNavOpen ? "opacity-0" : ""
+                  }`}
+              />
+              <span
+                className={`h-0.75 w-full rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${isNavOpen ? "-rotate-45 -translate-y-2.25" : ""
+                  }`}
+              />
+            </button>
           </div>
           {/* Navbar Right */}
           <div className="hidden md:flex ml-auto items-center">
