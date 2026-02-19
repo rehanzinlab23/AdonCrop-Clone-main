@@ -1,7 +1,9 @@
-const ExtensionCard = ({ image, title, description, ratingCount, version }) => {
+import { Link } from "react-router-dom";
+
+const ExtensionCard = ({ image, title, description, ratingCount, version, to = "#" }) => {
   return (
-    <a
-      href="#"
+    <Link
+      to={to}
       className="text-center flex flex-col bg-white border border-[#f5f5f5] rounded-2xl pt-12.5 px-10 pb-7.5 shadow-[0_5px_15px_rgba(0,0,0,0.08)] transition-shadow duration-100 ease-in-out hover:shadow-[0_10px_25px_rgba(0,0,0,0.12)]"
     >
       <div className="h-[74.39px] w-17 my-0 mx-auto">
@@ -44,7 +46,7 @@ const ExtensionCard = ({ image, title, description, ratingCount, version }) => {
           Version {version}
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 

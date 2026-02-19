@@ -1,10 +1,12 @@
 import logo from "../assets/images/logo.png";
 import SiteNavigation from "./SiteNavigation";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ isNavOpen, setIsNavOpen }) => {
   const navRef = useRef(null);
-  const toggleRef = useRef(null);
+  const desktopToggleRef = useRef(null);
+  const mobileToggleRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -12,8 +14,10 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
         isNavOpen &&
         navRef.current &&
         !navRef.current.contains(event.target) &&
-        toggleRef.current &&
-        !toggleRef.current.contains(event.target)
+        desktopToggleRef.current &&
+        !desktopToggleRef.current.contains(event.target) &&
+        mobileToggleRef.current &&
+        !mobileToggleRef.current.contains(event.target)
       ) {
         setIsNavOpen(false);
       }
@@ -27,30 +31,30 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
 
   return (
     <>
-      <header className="min-h-20 flex items-center relative z-102 bg-white">
+      <header className="min-h-20 flex items-center sticky top-0 z-102 bg-white shadow-[0_2px_10px_rgba(0,0,0,0.05)]">
         <div id="container" className="flex items-center justify-between w-full">
           <div className="flex items-center">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="mr-7.5 w-8 h-6 relative z-6"
               data-tooltip="Addoncrop"
             >
               <img src={logo} alt="Logo" />
-            </a>
+            </Link>
             <div>
               <ul className="hidden items-center md:flex">
                 <li className="mr-7.5">
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     className="text-[#373a3c] no-underline font-segoe font-medium leading-6 text-[15px] capitalize transition-colors duration-250 ease-in-out hover:text-[#05c896]!"
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="mr-7.5">
                   <a
                     href="#"
-                    ref={toggleRef}
+                    ref={desktopToggleRef}
                     className="text-[#373a3c] no-underline font-segoe font-medium leading-6 text-[15px] capitalize transition-colors duration-250 ease-in-out hover:text-[#05c896]!"
                     onClick={(e) => {
                       e.preventDefault();
@@ -66,7 +70,7 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center">
             <button
-              ref={toggleRef}
+              ref={mobileToggleRef}
               onClick={() => setIsNavOpen(!isNavOpen)}
               className="flex h-5 w-7 flex-col items-center justify-between p-0 cursor-pointer relative z-103 bg-transparent border-none"
             >

@@ -1,12 +1,13 @@
 import { House, Mail, CircleHelp } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const SiteNavigation = ({ isNavOpen, navRef }) => {
+const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
   return (
     <div
       ref={navRef}
       className={`z-101 fixed top-0 right-0 w-full h-full lg:h-auto lg:max-h-screen overflow-y-auto pt-24.5 px-0 pb-12 transition-all duration-500 bg-white shadow-[0_0_50px_0_rgba(1,1,1,0.15)] ${isNavOpen
-          ? "visible translate-x-0 lg:translate-y-0 opacity-100"
-          : "invisible translate-x-full lg:translate-x-0 lg:-translate-y-5 opacity-0"
+        ? "visible translate-x-0 lg:translate-y-0 opacity-100"
+        : "invisible translate-x-full lg:translate-x-0 lg:-translate-y-5 opacity-0"
         }`}
     >
       <div className="flex flex-col">
@@ -17,9 +18,10 @@ const SiteNavigation = ({ isNavOpen, navRef }) => {
               Video Downloaders
             </li>
             <li className="mb-1.25">
-              <a
-                href="#"
+              <Link
+                to="/youtube-video-downloader"
                 className="text-[#373a3c] flex items-start py-5 px-4 hover:bg-[#f9f9f9]"
+                onClick={() => setIsNavOpen(false)}
               >
                 <span
                   style={{
@@ -36,7 +38,7 @@ const SiteNavigation = ({ isNavOpen, navRef }) => {
                     video downloader
                   </span>
                 </span>
-              </a>
+              </Link>
             </li>
             <li className="mb-1.25">
               <a
@@ -158,13 +160,14 @@ const SiteNavigation = ({ isNavOpen, navRef }) => {
         <div className="flex lg:hidden flex-col">
           <ul className="flex flex-col">
             <li>
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="flex items-center py-6 px-10 text-[#05c896] bg-[#f9f9f9] border-l-[6px] border-[#05c896] font-medium font-segoe text-[19px] transition-colors"
+                onClick={() => setIsNavOpen(false)}
               >
                 <House size={26} strokeWidth={1.5} className="mr-6 text-[#05c896]" />
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <a
