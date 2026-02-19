@@ -213,12 +213,12 @@ const App = () => {
           </div>
         </section>
       </div>
-      {/* Progress Bar */}
-      <ProgressBar />
       {/* Footer */}
       <Footer />
       {/* Copyright */}
       <Copyright />
+      {/* Progress Bar */}
+      <ProgressBar />
     </>
   );
 };
