@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --font-segoe: "Segoe UI", sans-serif;
+}
+
+#container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 0;
+}
+
+b {
+  font-weight: 500;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #373a3c;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+
+}
+
+.rating-star {
+  width: 16px;
+  height: 16px;
+  cursor: auto;
+  z-index: 1;
+  margin-right: 4px;
+}
+
+.half-star.faved {
+  fill: #ffc107;
+}
+
+.progress-wrap::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  inset: 0;
+  z-index: 1;
+  cursor: pointer;
+  display: block;
+  background-image: url("./assets/images/svgArrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  height: 46px;
+  width: 46px;
+  color: #403e56;
+  line-height: 46px;
+  transition: all 200ms linear;
+}
+
+.icon {
+  --icon-size: 20px;
+}
+
+#footer-menu-wrap {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+
+@media only screen and (min-width: 768px) {
+  #container {
+    padding: 0 40px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  #footer-menu-wrap {
+    width: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #footer-menu-wrap {
+    margin-bottom: 0;
+  }
+}
+
+/* Roboto Font Weights */
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Thin.woff2") format("woff2"),
+    url("/fonts/Roboto/Roboto-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Light.woff2") format("woff2"),
+    url("/fonts/Roboto/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
+    url("/fonts/Roboto/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Medium.woff2") format("woff2"),
+    url("/fonts/Roboto/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Bold.woff2") format("woff2"),
+    url("/fonts/Roboto/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Black.woff2") format("woff2"),
+    url("/fonts/Roboto/Roboto-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Segoe UI */
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/fonts/Segoe_UI/SegoeUI-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: url("/fonts/Segoe_UI/SegoeUI-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
