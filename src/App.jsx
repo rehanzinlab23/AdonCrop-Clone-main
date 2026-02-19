@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ProgressBar from "./components/ProgressBar";
@@ -10,22 +10,10 @@ import YoutubeDownloader from "./pages/YoutubeDownloader";
 const App = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  useEffect(() => {
-    if (isNavOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isNavOpen]);
-
   return (
     <Router>
       {/* Navbar */}
       <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -33,7 +21,6 @@ const App = () => {
           element={<YoutubeDownloader />}
         />
       </Routes>
-
       {/* Footer */}
       <Footer />
       {/* Copyright */}

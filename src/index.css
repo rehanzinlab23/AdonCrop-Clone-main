@@ -74,11 +74,23 @@ body {
   --icon-size: 20px;
 }
 
+.icon-2 {
+  --icon-size: 32px;
+}
+
 #footer-menu-wrap {
   width: 100%;
   margin-bottom: 2rem;
 }
 
+.post-hero {
+  background-color: #fff;
+  background-image: url("./assets/images/grid.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding: 40px 0 0;
+}
 
 @media only screen and (min-width: 768px) {
   #container {
@@ -92,6 +104,10 @@ body {
   #footer-menu-wrap {
     width: auto;
     margin-bottom: 2rem;
+  }
+
+  .post-hero {
+    padding: 70px 20px 0;
   }
 }
 

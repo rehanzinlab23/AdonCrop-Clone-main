@@ -5,10 +5,11 @@ const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
   return (
     <div
       ref={navRef}
-      className={`z-101 fixed top-0 right-0 w-full h-full lg:h-auto lg:max-h-screen overflow-y-auto pt-24.5 px-0 pb-12 transition-all duration-500 bg-white shadow-[0_0_50px_0_rgba(1,1,1,0.15)] ${isNavOpen
-        ? "visible translate-x-0 lg:translate-y-0 opacity-100"
-        : "invisible translate-x-full lg:translate-x-0 lg:-translate-y-5 opacity-0"
-        }`}
+      className={`z-101 fixed top-0 right-0 w-full h-full lg:h-auto lg:max-h-screen overflow-y-auto pt-24.5 px-0 pb-12 transition-all duration-500 bg-white shadow-[0_0_50px_0_rgba(1,1,1,0.15)] ${
+        isNavOpen
+          ? "visible translate-x-0 lg:translate-y-0 opacity-100"
+          : "invisible translate-x-full lg:translate-x-0 lg:-translate-y-5 opacity-0"
+      }`}
     >
       <div className="flex flex-col">
         {/* Desktop View (lg and above) */}
@@ -165,7 +166,11 @@ const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
                 className="flex items-center py-6 px-10 text-[#05c896] bg-[#f9f9f9] border-l-[6px] border-[#05c896] font-medium font-segoe text-[19px] transition-colors"
                 onClick={() => setIsNavOpen(false)}
               >
-                <House size={26} strokeWidth={1.5} className="mr-6 text-[#05c896]" />
+                <House
+                  size={26}
+                  strokeWidth={1.5}
+                  className="mr-6 text-[#05c896]"
+                />
                 Home
               </Link>
             </li>
@@ -174,7 +179,11 @@ const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
                 href="#"
                 className="flex items-center py-6 px-10 text-[#373a3c] font-medium font-segoe text-[19px] hover:bg-[#f9f9f9] border-l-[6px] border-transparent transition-colors"
               >
-                <Mail size={26} strokeWidth={1.5} className="mr-6 text-[#373a3c]" />
+                <Mail
+                  size={26}
+                  strokeWidth={1.5}
+                  className="mr-6 text-[#373a3c]"
+                />
                 Contact Us
               </a>
             </li>
@@ -183,7 +192,11 @@ const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
                 href="#"
                 className="flex items-center py-6 px-10 text-[#373a3c] font-medium font-segoe text-[19px] hover:bg-[#f9f9f9] border-l-[6px] border-transparent transition-colors"
               >
-                <CircleHelp size={26} strokeWidth={1.5} className="mr-6 text-[#373a3c]" />
+                <CircleHelp
+                  size={26}
+                  strokeWidth={1.5}
+                  className="mr-6 text-[#373a3c]"
+                />
                 Support
               </a>
             </li>
