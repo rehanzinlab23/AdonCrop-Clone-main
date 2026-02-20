@@ -5,10 +5,10 @@ const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
   return (
     <div
       ref={navRef}
-      className={`z-101 fixed top-0 right-0 w-full h-full lg:h-auto lg:max-h-screen overflow-y-auto pt-24.5 px-0 pb-12 transition-all duration-500 bg-white shadow-[0_0_50px_0_rgba(1,1,1,0.15)] ${
+      className={`fixed top-(--navbar-height) left-0 w-full h-auto max-h-screen overflow-y-auto pt-6 px-0 pb-12 transition-all duration-500 bg-white z-1001 transform ${
         isNavOpen
-          ? "visible translate-x-0 lg:translate-y-0 opacity-100"
-          : "invisible translate-x-full lg:translate-x-0 lg:-translate-y-5 opacity-0"
+          ? "translate-y-0 opacity-100 pointer-events-auto"
+          : "-translate-y-full opacity-0 pointer-events-none"
       }`}
     >
       <div className="flex flex-col">

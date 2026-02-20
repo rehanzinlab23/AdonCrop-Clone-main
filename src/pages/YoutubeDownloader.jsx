@@ -172,7 +172,7 @@ const YoutubeDownloader = () => {
                 ))}
               </div>
               <div className="text-[14px] text-[#5f5f5f] leading-5.5 font-normal font-segoe">
-                (324548 votes, average: 4.6 out of 5)
+                (324607 votes, average: 4.6 out of 5)
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ const YoutubeDownloader = () => {
         </div>
       </section>
       {/* Section 2 */}
-      <section className="relative text-center mt-16 mx-auto mb-8">
+      <section className="relative text-center m-0">
         <div className="w-full relative my-0 mx-auto">
           <Swiper
             modules={[Navigation]}
