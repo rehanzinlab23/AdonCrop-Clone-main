@@ -92,10 +92,27 @@ body {
   padding: 40px 0 0;
 }
 
-.post-slider {
-  position: relative;
-  margin: 4rem auto 2rem;
+/* Swiper */
+
+/* Slide width EXACT */
+.pixelSwiper .swiper-slide {
+  width: 1105px;
+  transition: all 0.5s ease;
+  opacity: 0.35;
+  transform: scale(0.82);
 }
+
+.pixelSwiper .swiper-slide-active {
+  opacity: 1 !important;
+  transform: scale(1.05) !important;
+}
+
+/* Navigation arrows */
+.pixelSwiper .swiper-button-prev,
+.pixelSwiper .swiper-button-next {
+  display: none;
+}
+
 
 @media only screen and (min-width: 768px) {
   #container {
