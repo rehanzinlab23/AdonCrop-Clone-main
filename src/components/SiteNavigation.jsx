@@ -5,10 +5,10 @@ const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
   return (
     <div
       ref={navRef}
-      className={`fixed top-(--navbar-height) left-0 w-full h-auto max-h-screen overflow-y-auto pt-6 px-0 pb-12 transition-all duration-500 bg-white z-1001 transform ${
+      className={`fixed left-0 w-full overflow-hidden transition-all duration-500 bg-white z-1001 ${
         isNavOpen
-          ? "translate-y-0 opacity-100 pointer-events-auto"
-          : "-translate-y-full opacity-0 pointer-events-none"
+          ? "max-h-[calc(100vh-var(--navbar-height))] translate-y-0 opacity-100"
+          : "max-h-0 -translate-y-full opacity-0"
       }`}
     >
       <div className="flex flex-col">
