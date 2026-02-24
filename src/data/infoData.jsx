@@ -123,7 +123,7 @@ export const infoData = [
     ),
   },
   {
-    value: "17,126,874",
+    value: "17,142,513",
     label: "downloads",
     icon: (
       <svg

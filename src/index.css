@@ -5,6 +5,11 @@
   --font-segoe: "Segoe UI", sans-serif;
 }
 
+
+body {
+  overflow-x: hidden;
+}
+
 #container {
   width: 100%;
   max-width: 1280px;
@@ -78,6 +83,14 @@ body {
   --icon-size: 32px;
 }
 
+.icon-3 {
+  --icon-size-3: 48px;
+}
+
+.icon-4 {
+  --icon-size-4: 38px;
+}
+
 #footer-menu-wrap {
   width: 100%;
   margin-bottom: 2rem;
@@ -94,9 +107,15 @@ body {
 
 /* Swiper */
 
-/* Slide width EXACT */
+
+.swiper {
+  overflow: visible !important;
+}
+
 .pixelSwiper .swiper-slide {
-  width: 1105px;
+  width: 1079px !important;
+  /* height: 673.02px !important; */
+  height: auto !important;
   transition: all 0.5s ease;
   opacity: 0.35;
   transform: scale(0.82);
@@ -113,8 +132,248 @@ body {
   display: none;
 }
 
+.post-tabs-container {
+  padding: 40px 16px;
+}
+
+/* Sticky navbar */
+.sticky-site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  z-index: 9999;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  min-height: 90px;
+}
+
+
+.sticky-site-header.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.sticky-site-header .container {
+  padding: 0 10px;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.product-header-info {
+  display: flex;
+  align-items: center;
+}
+
+.product-header-info img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-header-info .product-icon {
+  width: 100%;
+  max-width: 42px;
+  height: 42px;
+  margin: 6px 16px 0 0;
+  align-self: flex-start;
+}
+
+.product-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.product-header-info .product-icon img {
+  width: 100%;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-ratings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.product-header-info .post-ratings {
+  margin-top: 4px;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Section 4 */
+
+.icon-3 {
+  --icon-size-3: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 48px;
+  min-width: 48px;
+  color: inherit;
+}
+
+/* Section 5 */
+
+.post-faqs {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 16px;
+}
+
+.faq-item {
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  cursor: pointer;
+  position: relative;
+  padding: 20px 40px 0 20px;
+  transition: all .25s ease-in-out;
+}
+
+.faq-item.open .faq-question {
+  padding-bottom: 20px;
+}
+
+.faq-question::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 27px;
+  right: 20px;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #373a3c;
+  border-bottom: 2px solid #373a3c;
+  border-bottom-left-radius: 2px;
+  transform: rotate(-45deg);
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), top 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer {
+  padding: 0 20px;
+  max-height: 0px;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 400;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 600px;
+}
+
+.faq-item.open .faq-question::after {
+  transform: rotate(135deg);
+  top: 32px;
+}
+
+.faq-answer p {
+  margin-bottom: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #5f5f5f;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-title {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #373a3c;
+}
+
+/* Section 6  */
+
+.post-downloads {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 16px;
+  padding-bottom: 0 !important;
+}
+
+.post-downloads-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 50px 60px;
+  width: 100%;
+  max-width: 1150px;
+  margin: 3rem auto 0;
+  padding: 0 20px;
+}
+
+.icon-4 {
+  --icon-size-4: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 38px;
+  min-width: 38px;
+  height: 38px;
+  color: inherit;
+}
 
 @media only screen and (min-width: 768px) {
+  .product-header-info .product-icon {
+    margin: 6px 16px 0 0;
+  }
+
+  .sticky-site-header .container {
+    padding: 0 20px;
+  }
+
+  .container {
+    padding: 0 40px;
+  }
+
   #container {
     padding: 0 40px;
   }
@@ -135,11 +394,34 @@ body {
   .post-slider {
     margin: 0;
   }
+
+  .post-tabs-container {
+    padding: 60px 24px;
+  }
+
+  .post-faqs {
+    padding: 60px 24px;
+  }
+
+  .post-downloads {
+    padding: 60px 24px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .post-downloads-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   #footer-menu-wrap {
     margin-bottom: 0;
+  }
+
+  .post-downloads-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
   }
 }
 

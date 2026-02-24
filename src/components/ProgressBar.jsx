@@ -34,7 +34,7 @@ const ProgressBar = () => {
   return (
     <div
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`progress-wrap fixed right-12.5 bottom-12.5 h-11.5 w-11.5 rounded-full bg-white cursor-pointer z-1000 transition-all duration-200 ease-linear ${
+      className={`progress-wrap fixed right-12.5 bottom-12.5 h-11.5 w-11.5 rounded-full bg-transparent cursor-pointer z-1000 transition-all duration-200 ease-linear ${
         isVisible
           ? "opacity-100 visible translate-y-0"
           : "opacity-0 invisible translate-y-4"
