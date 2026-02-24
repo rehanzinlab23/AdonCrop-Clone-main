@@ -132,10 +132,6 @@ body {
   display: none;
 }
 
-.post-tabs-container {
-  padding: 40px 16px;
-}
-
 /* Sticky navbar */
 .sticky-site-header {
   position: fixed;
@@ -234,6 +230,14 @@ body {
   margin-top: 4px;
   flex-direction: row;
   align-items: center;
+}
+
+/* Section 3 */
+
+.post-tabs-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 16px;
 }
 
 /* Section 4 */
