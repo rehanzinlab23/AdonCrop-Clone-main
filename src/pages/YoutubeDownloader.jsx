@@ -7,16 +7,20 @@ import FaqItem from "../components/FaqItem";
 import LanguageCard from "../components/LanguageCard";
 import DownloadCard from "../components/DownloadCard";
 import FeatureItem from "../components/FeatureItem";
+import ChangelogItem from "../components/ChangelogItem";
 import { infoData } from "../data/infoData";
 import { faqData } from "../data/faqData";
 import { languageData } from "../data/languageData";
 import { downloadData } from "../data/downloadData";
 import { featureData } from "../data/featureData";
+import { changelogData } from "../data/changelogData";
 
 const YoutubeDownloader = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const [showAll, setShowAll] = useState(false);
+  const [activeTab, setActiveTab] = useState("features");
+  const [showAllChangelog, setShowAllChangelog] = useState(false);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -160,24 +164,42 @@ const YoutubeDownloader = () => {
           <ul className="mb-12 flex items-center relative border border-[#efefef] rounded-[36px]">
             <li>
               <a
-                href="#features"
-                className="last:mr-0 text-white! flex items-center justify-center text-[16px] capitalize rounded-[36px] transition-all duration-200 ease-in-out cursor-pointer px-7 py-2"
+                onClick={() => setActiveTab("features")}
+                className="last:mr-0 flex items-center justify-center text-[16px] capitalize rounded-[36px] transition-all duration-200 ease-in-out cursor-pointer px-7 py-2"
+                style={{
+                  color: activeTab === "features" ? "white" : "#a2a9ba8a",
+                }}
               >
                 features
               </a>
             </li>
             <li>
               <a
-                href="#change-log"
-                className="last:mr-0 text-[#a2a9ba8a]! flex items-center justify-center text-[16px] capitalize rounded-[36px] transition-all duration-200 ease-in-out cursor-pointer px-7 py-2"
+                onClick={() => setActiveTab("changelog")}
+                className="last:mr-0 flex items-center justify-center text-[16px] capitalize rounded-[36px] transition-all duration-200 ease-in-out cursor-pointer px-7 py-2"
+                style={{
+                  color: activeTab === "changelog" ? "white" : "#a2a9ba8a",
+                }}
               >
                 changelog
               </a>
             </li>
-            <li className="absolute top-0 left-0 w-29.5 h-full z-[-1] bg-[#403e56] rounded-[36px] transition-transform duration-200"></li>
+            <li
+              className="absolute top-0 left-0 w-1/2 h-full z-[-1] bg-[#403e56] rounded-[36px] transition-transform duration-200"
+              style={{
+                transform:
+                  activeTab === "changelog"
+                    ? "translateX(100%)"
+                    : "translateX(0)",
+              }}
+            ></li>
           </ul>
         </div>
-        <div className="grid grid-cols-1 gap-12.5 pb-20 relative p-20 w-full max-w-250 my-0 mx-auto rounded-lg border border-[#efefef]">
+        {/* Feature */}
+        <div
+          className="grid grid-cols-1 gap-12.5 pb-20 relative p-20 w-full max-w-250 my-0 mx-auto rounded-lg border border-[#efefef]"
+          style={{ display: activeTab === "features" ? "grid" : "none" }}
+        >
           {featureData.map((feature, index) => (
             <div key={index} className={index >= 6 && !showAll ? "hidden" : ""}>
               <FeatureItem
@@ -192,6 +214,30 @@ const YoutubeDownloader = () => {
             className="absolute -bottom-4.5 left-[50%] -translate-x-1/2 transform bg-[#05c896] border border-[#05c896] text-white flex items-center rounded-[30px] cursor-pointer text-[14px] font-medium gap-3 py-2.5 px-5.5 text-center capitalize leading-3.5 font-segoe transition-all duration-100 ease-in-out hover:brightness-90"
           >
             {showAll ? "hide" : "read more"}
+          </div>
+        </div>
+        {/* Change-Log */}
+        <div
+          className="change-log_wrapper"
+          style={{ display: activeTab === "changelog" ? "block" : "none" }}
+        >
+          {changelogData.map((log, index) => (
+            <div
+              key={index}
+              className={index >= 3 && !showAllChangelog ? "hidden" : ""}
+            >
+              <ChangelogItem
+                date={log.date}
+                version={log.version}
+                items={log.items}
+              />
+            </div>
+          ))}
+          <div
+            onClick={() => setShowAllChangelog(!showAllChangelog)}
+            className="absolute -bottom-4.5 left-[50%] -translate-x-1/2 transform bg-[#05c896] border border-[#05c896] text-white flex items-center rounded-[30px] cursor-pointer text-[14px] font-medium gap-3 py-2.5 px-5.5 text-center capitalize leading-3.5 font-segoe transition-all duration-100 ease-in-out hover:brightness-90"
+          >
+            {showAllChangelog ? "hide" : "read more"}
           </div>
         </div>
       </section>

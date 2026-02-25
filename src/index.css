@@ -240,6 +240,60 @@ body {
   padding: 40px 16px;
 }
 
+.change-log_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.change-log_date {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1.24rem;
+}
+
+.change-log_list li.add::before {
+  content: "add";
+  margin-right: 6px;
+  border-color: #3baa55;
+  color: #3baa55;
+}
+
+.change-log_list li.log-fixed::before {
+  content: "fixed";
+  margin-right: 6px;
+  border-color: #3778ff;
+  color: #3778ff;
+}
+
+.change-log_list li.changed::before {
+  content: "changed";
+  margin-right: 6px;
+  border-color: #e39477;
+  color: #e39477;
+}
+
+.change-log_list li.removed:before {
+  content: "removed";
+  margin-right: 6px;
+  border-color: #fb3434;
+  color: #fb3434;
+}
+
+.change-log_list li::before {
+  display: inline-block !important;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 12px;
+}
+
 /* Section 4 */
 
 .icon-3 {
@@ -366,6 +420,38 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .change-log_wrapper {
+    padding: 50px;
+  }
+
+  .change-log_wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 210px;
+    bottom: 50px;
+    width: 4px;
+    background: #05c896;
+  }
+
+  .change-log_date {
+    max-width: 200px;
+    padding-right: 70px;
+  }
+
+  .change-log_date::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #05c896;
+    background-color: #fff;
+    border-radius: 100%;
+    top: 0;
+    right: 24px;
+    z-index: 99;
+  }
+
   .product-header-info .product-icon {
     margin: 6px 16px 0 0;
   }
@@ -419,6 +505,35 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
+  .change-log_wrapper {
+    padding: 80px;
+  }
+
+  .change-log_wrapper::before {
+    content: "";
+    top: 80px;
+    bottom: 80px;
+    left: 280px;
+  }
+
+  .change-log_date {
+    max-width: 200px;
+    padding-right: 70px;
+  }
+
+  .change-log_date::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #05c896;
+    background-color: #fff;
+    border-radius: 100%;
+    top: 0;
+    right: -16px;
+    z-index: 99;
+  }
+
   #footer-menu-wrap {
     margin-bottom: 0;
   }
