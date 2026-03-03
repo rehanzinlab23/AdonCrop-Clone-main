@@ -1,4 +1,32 @@
-const Footer = () => {
+const Footer = ({ type }) => {
+  const articleSection =
+    type === "youtube"
+      ? {
+          title: "Support Articles",
+          links: [
+            "Download YouTube Videos with Addoncrop: The Best Chrome Extension for Offline Enjoyment",
+            "Ultimate Guide: Convert YouTube Videos to WAV & More with Addoncrop Chrome Extension and Flixmate",
+            "Ultimate Guide: How to Download 4K Videos from YouTube with Addoncrop Chrome Extension",
+            "Enhance Your YouTube Experience: How to Trim & Cut YouTube Videos with Addoncrop YouTube Downloader Chrome Extension",
+            "How to download subtitles from YouTube",
+            "How to Download YouTube Thumbnail Images",
+            "How to Capture a YouTube Screenshot",
+            "How to Put a YouTube Video on Repeat",
+          ],
+        }
+      : {
+          title: "featured articles",
+          links: [
+            "What is a Browser Extension?",
+            "Installing and managing extensions",
+            "What is Userscript",
+            "Ultimate Guide: How to Download 4K Videos from YouTube with Addoncrop Chrome Extension",
+            "Elevate Your YouTube Experience: How to Trim & Convert YouTube Videos to Mp3 with Addoncrop Chrome Extension",
+            "Download SoundCloud Playlists with Ease using Addoncrop Soundcloud Music Downloader",
+            "Download Music from VK with Addoncrop VK Music Downloader Extension",
+          ],
+        };
+
   return (
     <footer className="mt-12 py-15 px-0 border-t border-t-[#efefef]">
       <div id="container">
@@ -38,7 +66,7 @@ const Footer = () => {
                   href="#"
                   className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
                 >
-                  vk video downloader
+                  vK video downloader
                 </a>
               </li>
               <li className="mb-0 h-[23.8px]">
@@ -50,11 +78,13 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-            <ul className="mb-0 h-[67.8px]">
+            <ul className="mb-0">
               <h4 className="font-roboto capitalize font-bold text-[16px] leading-6 text-[#333] mb-5">
                 Partners
               </h4>
-              <li className="mb-0 h-[23.8px]">
+              <li
+                className={`h-[23.8px] ${type === "youtube" ? "mb-8" : "mb-0"}`}
+              >
                 <a
                   href="#"
                   className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
@@ -84,75 +114,19 @@ const Footer = () => {
           <div id="footer-menu-wrap">
             <ul className="mb-0 h-[330.59px]">
               <h4 className="font-roboto capitalize font-bold text-[16px] leading-6 text-[#333] mb-5">
-                featured articles
+                {articleSection.title}
               </h4>
-              {/* Li 1 */}
-              <li className="mb-5 h-[23.8px]">
-                <a
-                  href="#"
-                  className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
-                >
-                  What is a Browser Extension?
-                </a>
-              </li>
-              {/* Li 2 */}
-              <li className="mb-5 h-[23.8px]">
-                <a
-                  href="#"
-                  className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
-                >
-                  Installing and managing extensions
-                </a>
-              </li>
-              {/* Li 3 */}
-              <li className="mb-5 h-[23.8px]">
-                <a
-                  href="#"
-                  className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
-                >
-                  What is Userscript
-                </a>
-              </li>
-              {/* Li 4 */}
-              <li className="mb-5 h-[23.8px]">
-                <a
-                  href="#"
-                  className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
-                >
-                  Ultimate Guide: How to Download 4K Videos from YouTube with
-                  Addoncrop Chrome Extension
-                </a>
-              </li>
-              {/* Li 5 */}
-              <li className="mb-5 h-[23.8px]">
-                <a
-                  href="#"
-                  className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
-                >
-                  Elevate Your YouTube Experience: How to Trim & Convert YouTube
-                  Videos to Mp3 with Addoncrop Chrome Extension
-                </a>
-              </li>
-              {/* Li 6 */}
-              <li className="mb-5 h-[23.8px]">
-                <a
-                  href="#"
-                  className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
-                >
-                  Download SoundCloud Playlists with Ease using Addoncrop
-                  Soundcloud Music Downloader
-                </a>
-              </li>
-              {/* Li 7 */}
-              <li className="mb-0 h-[23.8px]">
-                <a
-                  href="#"
-                  className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
-                >
-                  Download Music from VK with Addoncrop VK Music Downloader
-                  Extension
-                </a>
-              </li>
+
+              {articleSection.links.map((item, index) => (
+                <li key={index} className="mb-5">
+                  <a
+                    href="#"
+                    className="text-[14px] font-segoe leading-[1.7] text-[#737373]! hover:text-black! font-normal capitalize"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           {/* 4 */}

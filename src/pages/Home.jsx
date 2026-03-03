@@ -5,8 +5,13 @@ import downloader from "../assets/images/downloader.png";
 import converter from "../assets/images/converter.png";
 import soundCloud from "../assets/images/soundcloud.png";
 import blog from "../assets/images/blog.png";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Download your favorite contents";
+  }, []);
+
   const extensionsData = [
     {
       id: 1,

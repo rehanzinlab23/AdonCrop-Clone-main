@@ -10,6 +10,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #container {
   width: 100%;
   max-width: 1280px;
@@ -105,9 +109,22 @@ body {
   padding: 40px 0 0;
 }
 
+.dd--popup::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
 /* Swiper */
-
-
 .swiper {
   overflow: visible !important;
 }

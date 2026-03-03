@@ -14,13 +14,20 @@ import { languageData } from "../data/languageData";
 import { downloadData } from "../data/downloadData";
 import { featureData } from "../data/featureData";
 import { changelogData } from "../data/changelogData";
-
-const YoutubeDownloader = () => {
+import CrxModal from "../components/CrxModal";
+const YoutubeDownloader = ({ isNavOpen }) => {
   const [isSticky, setIsSticky] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
   const [showAll, setShowAll] = useState(false);
   const [activeTab, setActiveTab] = useState("features");
   const [showAllChangelog, setShowAllChangelog] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [headerModal, setHeaderModal] = useState(false);
+  const [openModalId, setOpenModalId] = useState(null);
+  useEffect(() => {
+    document.title =
+      "Completely Free Multi-featured YouTube Video Downloader | Addoncrop";
+  }, []);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -40,10 +47,11 @@ const YoutubeDownloader = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   return (
     <>
-      <header className={`sticky-site-header ${isSticky ? "active" : ""}`}>
+      <header
+        className={`sticky-site-header ${isSticky && !isNavOpen ? "active" : ""}`}
+      >
         <div className="container header-wrapper">
           <div className="product-header-info">
             <div className="product-icon">
@@ -81,16 +89,32 @@ const YoutubeDownloader = () => {
                 </div>
               </div>
             </div>
+            <a
+              href="#"
+              class="bg-[#05c896] border border-[#05c896] text-white! pt-1.25 pb-1.25 pl-2 pr-2 ml-6.75 flex md:hidden items-center rounded-[30px] cursor-pointer text-[15px] font-normal font-segoe gap-3 leading-3.75 text-center capitalize transition-all duration-100 ease-in-out hover:text-white hover:brightness-90"
+            >
+              install now
+            </a>
           </div>
           <div className="flex ml-auto items-center">
             <div className="flex items-center relative">
               <div className="relative max-w-max">
-                <button className="bg-[#05c896] border border-[#05c896] text-white pt-2.25 pb-2.25 px-5.5 flex items-center rounded-[30px] cursor-pointer text-[15px] font-normal font-segoe gap-3 leading-3.75 text-center capitalize transition-all duration-100 ease-in-out hover:text-white hover:brightness-90">
+                <button
+                  onClick={() => setHeaderModal(!headerModal)}
+                  className={`bg-[#05c896] border border-[#05c896] text-white py-2.5 px-5.5 flex items-center rounded-[30px] cursor-pointer text-[14px] font-medium font-segoe gap-3 leading-3.5 text-center capitalize transition-all duration-100 ease-in-out hover:text-white hover:brightness-90 ${
+                    headerModal
+                      ? "bg-[#a2a9ba] border-[#a2a9ba] hover:brightness-90"
+                      : ""
+                  }`}
+                >
                   <span className="icon flex items-center justify-center w-full max-w-5 min-w-5 h-5 text-inherit">
                     <img src={chrome} alt="Chrome Extension" />
                   </span>
                   <span>Add to Chrome</span>
                 </button>
+                {headerModal && (
+                  <CrxModal onClose={() => setHeaderModal(false)} />
+                )}
               </div>
             </div>
           </div>
@@ -111,15 +135,29 @@ const YoutubeDownloader = () => {
             </p>
             <div className="flex flex-row items-center gap-6">
               <div className="relative max-w-max">
-                <button className="bg-[#05c896] border border-[#05c896] text-white py-2.5 px-5.5 flex items-center rounded-[30px] cursor-pointer text-[14px] font-medium font-segoe gap-3 leading-3.5 text-center capitalize transition-all duration-100 ease-in-out hover:text-white hover:brightness-90">
+                <button
+                  onClick={() => setShowModal(!showModal)}
+                  className={`bg-[#05c896] border border-[#05c896] text-white py-2.5 px-5.5 flex items-center rounded-[30px] cursor-pointer text-[14px] font-medium font-segoe gap-3 leading-3.5 text-center capitalize transition-all duration-100 ease-in-out hover:text-white hover:brightness-90 ${
+                    showModal
+                      ? "bg-[#a2a9ba] border-[#a2a9ba] hover:brightness-90"
+                      : ""
+                  }`}
+                >
                   <span className="icon flex items-center justify-center w-full max-w-5 min-w-5 h-5 text-inherit">
                     <img src={chrome} alt="Chrome Extension" />
                   </span>
                   <span>Add to Chrome</span>
                 </button>
+                {/* CRX Modal */}
+                {showModal && <CrxModal onClose={() => setShowModal(false)} />}
               </div>
-              <button className="font-medium font-segoe text-[14px] text-[#403e56] text-center border border-[#403e56] leading-3.5 capitalize py-2.5 px-5.5 relative flex items-center justify-center rounded-[30px] cursor-pointer gap-3 transition-all duration-100 ease-in-out hover:text-white hover:bg-[#403e56]">
-                other browsers
+              <button className="border border-[#403e56] text-[#403e56]! py-2.5 px-5.5 relative flex items-center justify-center rounded-[30px] cursor-pointer gap-3 transition-all duration-100 ease-in-out hover:text-white! hover:bg-[#403e56]">
+                <a
+                  href="#post-downloads"
+                  className="text-[#403e56]! hover:text-white! font-medium font-segoe text-[14px] text-center leading-3.5 capitalize"
+                >
+                  other browsers
+                </a>
               </button>
             </div>
             <div className="flex flex-row items-center gap-3 mt-6">
@@ -160,7 +198,7 @@ const YoutubeDownloader = () => {
       </section>
       {/* Section 3 */}
       <section className="post-tabs-container">
-        <div className="flex justify-center w-full max-w-250 m-auto">
+        <div className="flex justify-center w-full h-auto max-w-250 m-auto">
           <ul className="mb-12 flex items-center relative border border-[#efefef] rounded-[36px]">
             <li>
               <a
@@ -185,12 +223,13 @@ const YoutubeDownloader = () => {
               </a>
             </li>
             <li
-              className="absolute top-0 left-0 w-1/2 h-full z-[-1] bg-[#403e56] rounded-[36px] transition-transform duration-200"
+              className="absolute top-0 left-0 h-full z-[-1] bg-[#403e56] rounded-[36px] transition-transform duration-200"
               style={{
                 transform:
                   activeTab === "changelog"
                     ? "translateX(100%)"
                     : "translateX(0)",
+                width: activeTab === "changelog" ? "124.3px" : "118px",
               }}
             ></li>
           </ul>
@@ -271,7 +310,7 @@ const YoutubeDownloader = () => {
         </div>
       </section>
       {/* Section 6 */}
-      <section className="post-downloads">
+      <section className="post-downloads scroll-mt-65" id="post-downloads">
         <h3 className="text-[45px] text-[#373a3c] leading-[49.2px] font-thin font-roboto block text-center mb-3">
           It's <b>Unlimited &amp; Free</b> to Use - <b>Install Today! </b>
         </h3>
@@ -282,6 +321,10 @@ const YoutubeDownloader = () => {
               icon={item.icon}
               name={item.name}
               description={item.description}
+              isOpen={openModalId === item.id}
+              setOpenModalId={() =>
+                setOpenModalId(openModalId === item.id ? null : item.id)
+              }
             />
           ))}
         </div>

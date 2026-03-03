@@ -31,7 +31,9 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
 
   return (
     <>
-      <header className="min-h-20 flex items-center sticky top-0 z-102 bg-white">
+      <header
+        className={`min-h-20 flex items-center top-0 z-1001 bg-white ${isNavOpen ? "sticky" : "relative"}`}
+      >
         <div
           id="container"
           className="flex items-center justify-between w-full"
