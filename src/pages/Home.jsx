@@ -3,7 +3,7 @@ import ArticleCard from "../components/ArticleCard";
 import SupportCard from "../components/SupportCard";
 import downloader from "../assets/images/downloader.png";
 import converter from "../assets/images/converter.png";
-import soundCloud from "../assets/images/soundcloud.png";
+import soundCloud from "../assets/images/soundCloud.png";
 import blog from "../assets/images/blog.png";
 import { useEffect } from "react";
 
