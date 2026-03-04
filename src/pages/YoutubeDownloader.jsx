@@ -101,7 +101,7 @@ const YoutubeDownloader = ({ isNavOpen }) => {
               <div className="relative max-w-max">
                 <button
                   onClick={() => setHeaderModal(!headerModal)}
-                  className={`bg-[#05c896] border border-[#05c896] text-white py-2.5 px-5.5 hidden lg:flex items-center rounded-[30px] cursor-pointer text-[14px] font-medium font-segoe gap-3 leading-3.5 text-center capitalize transition-all duration-100 ease-in-out hover:text-white hover:brightness-90 ${
+                  className={`bg-[#05c896] border border-[#05c896] text-white py-2.25 px-5.5 hidden lg:flex items-center rounded-[30px] cursor-pointer text-[15px] font-normal font-segoe gap-3 leading-3.75 text-center capitalize transition-all duration-100 ease-in-out hover:text-white hover:brightness-90 ${
                     headerModal
                       ? "bg-[#a2a9ba] border-[#a2a9ba] hover:brightness-90"
                       : ""
