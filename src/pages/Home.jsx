@@ -19,8 +19,8 @@ const Home = () => {
       title: "YouTube <br /> Video Downloader",
       description:
         "Our free Browser Extension allows you to download YouTube videos in different video qualities ranging from 360p to ultra high definition 4k. Supports all formats, including AVI, FLV, WebM, MP4 and MP3 without size and length limits.",
-      ratingCount: "70547",
-      version: "17.7.5",
+      ratingCount: "70785",
+      version: "17.7.9",
       link: "/youtube-video-downloader",
     },
     {
@@ -29,8 +29,8 @@ const Home = () => {
       title: "YouTube <br /> Mp3 Converter",
       description:
         "Want to convert videos from YouTube to mp3 without needing to leave the platform? Our mp3 YouTube converter is a free browser extension that supports mp3 bitrates up to a quality of 320kbps and can be easily trimmed & cut to whatever size or duration you need.",
-      ratingCount: "18003",
-      version: "7.5.4",
+      ratingCount: "18053",
+      version: "7.5.5",
       link: "#",
     },
     {
@@ -39,7 +39,7 @@ const Home = () => {
       title: "Soundcloud <br /> Music Downloader",
       description:
         "Download single tracks or entire playlists of Soundcloud to mp3 music with ID3 tags, ease & all for free! Ours best Soundcloud to mp3 converter browser extension supports a range of browsers, as well as letting you cut & trim your favourite audio content to your exact requirements.",
-      ratingCount: "17040",
+      ratingCount: "17048",
       version: "7.0.4",
       link: "#",
     },

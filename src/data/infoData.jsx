@@ -1,6 +1,6 @@
 export const infoData = [
   {
-    value: "17.7.6",
+    value: "17.7.9",
     label: "version",
     icon: (
       <svg
@@ -84,7 +84,7 @@ export const infoData = [
     ),
   },
   {
-    value: "february 20, 2026",
+    value: "February 27, 2026",
     label: "last update",
     icon: (
       <svg
@@ -123,7 +123,7 @@ export const infoData = [
     ),
   },
   {
-    value: "17,142,513",
+    value: "17,194,386",
     label: "downloads",
     icon: (
       <svg
