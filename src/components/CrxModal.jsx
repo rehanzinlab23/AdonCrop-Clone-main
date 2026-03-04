@@ -6,7 +6,7 @@ const CrxModal = ({ onClose }) => {
   return (
     <div
       id="modal"
-      className="dd--popup w-92.5 xs:w-80 sm:w-92.5 p-[22px_16px_18px] border border-[#ccc] rounded-lg bg-white z-100 shadow-[0_7px_28px_0_rgba(0,0,0,0.07)] flex flex-col gap-3 absolute top-[calc(100%+12px)] right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2"
+      className="dd--popup w-92.5 p-[22px_16px_18px] border border-[#ccc] rounded-lg bg-white z-100 shadow-[0_7px_28px_0_rgba(0,0,0,0.07)] flex flex-col gap-3 absolute top-[calc(100%+12px)] right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2"
     >
       {/* Close button */}
       <button

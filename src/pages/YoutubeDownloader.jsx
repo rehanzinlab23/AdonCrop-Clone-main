@@ -133,7 +133,7 @@ const YoutubeDownloader = ({ isNavOpen }) => {
               definition 4k. Supports all formats, including AVI, FLV, WebM, MP4
               and MP3 without size and length limits.{" "}
             </p>
-            <div className="flex flex-row items-center gap-6">
+            <div className="flex md:flex-row flex-col items-center gap-6">
               <div className="relative max-w-max">
                 <button
                   onClick={() => setShowModal(!showModal)}
