@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isNavOpen]);
+
   return (
     <div
       ref={navRef}

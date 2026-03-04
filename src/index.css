@@ -8,6 +8,7 @@
 
 body {
   overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -114,11 +115,6 @@ img {
   width: 100%;
 }
 
-body {
-  font-family: "Segoe UI", sans-serif;
-
-}
-
 .rating-star {
   width: 16px;
   height: 16px;
@@ -200,13 +196,17 @@ body {
 
 /* Hamburger */
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .mobile-menu--container {
   position: fixed;
   top: 80px;
   left: 0;
   overflow-y: auto;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 80px);
   background-color: #fff;
   transform: translateX(0);
   transition: all .3s ease-in-out;
