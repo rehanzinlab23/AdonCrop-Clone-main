@@ -112,7 +112,9 @@ const Footer = ({ type }) => {
           </div>
           {/* 3 */}
           <div id="footer-menu-wrap">
-            <ul className="mb-0 h-[330.59px]">
+            <ul
+              className={`mb-0 md:h-[330.59px] ${type === "youtube" ? "h-[485.59px]" : "h-[440.59px]"}`}
+            >
               <h4 className="font-roboto capitalize font-bold text-[16px] leading-6 text-[#333] mb-5">
                 {articleSection.title}
               </h4>
