@@ -250,7 +250,7 @@ body {
   padding: 12px 32px 12px 64px;
 }
 
-.mobile-menu .menu-item.current-menu-item a:before {
+.mobile-menu .menu-item.current-menu-item a::before {
   content: "";
   width: 6px;
   position: absolute;
