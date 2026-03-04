@@ -80,17 +80,17 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
               className="flex h-5 w-7 flex-col items-center justify-between p-0 cursor-pointer relative z-103 bg-transparent border-none"
             >
               <span
-                className={`h-0.75 w-full rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${
+                className={`h-0.5 w-6 inline-block relative rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${
                   isNavOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               />
               <span
-                className={`h-0.75 w-full rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${
+                className={`h-0.5 w-6 inline-block relative rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${
                   isNavOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`h-0.75 w-full rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${
+                className={`h-0.5 w-6 inline-block relative rounded bg-[#373a3c] transition-all duration-300 ease-in-out ${
                   isNavOpen ? "-rotate-45 -translate-y-2.25" : ""
                 }`}
               />

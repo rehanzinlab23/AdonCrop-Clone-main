@@ -1,4 +1,3 @@
-import { House, Mail, CircleHelp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
@@ -158,47 +157,18 @@ const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
             </div>
           </div>
           {/* Mobile View (sm and md) */}
-          <div className="flex lg:hidden flex-col">
-            <ul className="flex flex-col">
-              <li>
-                <Link
-                  to="/"
-                  className="flex items-center py-6 px-10 text-[#05c896] bg-[#f9f9f9] border-l-[6px] border-[#05c896] font-medium font-segoe text-[19px] transition-colors"
-                  onClick={() => setIsNavOpen(false)}
-                >
-                  <House
-                    size={26}
-                    strokeWidth={1.5}
-                    className="mr-6 text-[#05c896]"
-                  />
+          <div className="mobile-menu--container">
+            <ul className="mobile-menu">
+              <li className="icon-home menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-718">
+                <Link to="/" onClick={() => setIsNavOpen(false)}>
                   Home
                 </Link>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center py-6 px-10 text-[#373a3c] font-medium font-segoe text-[19px] hover:bg-[#f9f9f9] border-l-[6px] border-transparent transition-colors"
-                >
-                  <Mail
-                    size={26}
-                    strokeWidth={1.5}
-                    className="mr-6 text-[#373a3c]"
-                  />
-                  Contact Us
-                </a>
+              <li className="icon-contact menu-item menu-item-type-post_type menu-item-object-page menu-item-719">
+                <a href="#">Contact Us</a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center py-6 px-10 text-[#373a3c] font-medium font-segoe text-[19px] hover:bg-[#f9f9f9] border-l-[6px] border-transparent transition-colors"
-                >
-                  <CircleHelp
-                    size={26}
-                    strokeWidth={1.5}
-                    className="mr-6 text-[#373a3c]"
-                  />
-                  Support
-                </a>
+              <li className="icon-help menu-item menu-item-type-custom menu-item-object-custom menu-item-720">
+                <a href="#">Support</a>
               </li>
             </ul>
           </div>

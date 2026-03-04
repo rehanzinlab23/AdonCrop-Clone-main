@@ -184,7 +184,7 @@ const YoutubeDownloader = ({ isNavOpen }) => {
                 ))}
               </div>
               <div className="text-[14px] text-[#5f5f5f] leading-5.5 font-normal font-segoe">
-                (325458 votes, average: 4.6 out of 5)
+                (325461 votes, average: 4.6 out of 5)
               </div>
             </div>
           </div>

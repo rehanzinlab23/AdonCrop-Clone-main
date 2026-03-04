@@ -19,8 +19,8 @@ const Home = () => {
       title: "YouTube <br /> Video Downloader",
       description:
         "Our free Browser Extension allows you to download YouTube videos in different video qualities ranging from 360p to ultra high definition 4k. Supports all formats, including AVI, FLV, WebM, MP4 and MP3 without size and length limits.",
-      ratingCount: "70785",
-      version: "17.7.9",
+      ratingCount: "70786",
+      version: "17.8.0",
       link: "/youtube-video-downloader",
     },
     {
@@ -30,7 +30,7 @@ const Home = () => {
       description:
         "Want to convert videos from YouTube to mp3 without needing to leave the platform? Our mp3 YouTube converter is a free browser extension that supports mp3 bitrates up to a quality of 320kbps and can be easily trimmed & cut to whatever size or duration you need.",
       ratingCount: "18053",
-      version: "7.5.5",
+      version: "7.5.6",
       link: "#",
     },
     {
