@@ -638,12 +638,6 @@ body {
   .swiper {
     overflow: hidden !important;
   }
-
-  .dd--popup::after {
-    left: auto;
-    right: 20px;
-    transform: translateX(0) rotate(45deg);
-  }
 }
 
 @media (min-width: 640px) {
@@ -662,7 +656,7 @@ body {
 
 @media (max-width: 480px) {
   .dd--popup::after {
-    left: 24px;
+    left: 92%;
     transform: translateX(0) rotate(45deg);
   }
 }
