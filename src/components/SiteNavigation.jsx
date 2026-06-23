@@ -170,7 +170,7 @@ const SiteNavigation = ({ isNavOpen, setIsNavOpen, navRef }) => {
             </div>
           </div>
           {/* Mobile View (sm and md) */}
-          <div className="mobile-menu--container">
+          <div className="mobile-menu--container lg:hidden">
             <ul className="mobile-menu">
               <li className="icon-home menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-22 current_page_item menu-item-718">
                 <Link to="/" onClick={() => setIsNavOpen(false)}>

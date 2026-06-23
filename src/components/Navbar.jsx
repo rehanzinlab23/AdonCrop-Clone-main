@@ -47,7 +47,7 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
               <img src={logo} alt="Logo" />
             </Link>
             <div>
-              <ul className="hidden items-center md:flex">
+              <ul className="hidden items-center lg:flex">
                 <li className="mr-7.5">
                   <Link
                     to="/"
@@ -73,7 +73,7 @@ const Navbar = ({ isNavOpen, setIsNavOpen }) => {
             </div>
           </div>
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               ref={mobileToggleRef}
               onClick={() => setIsNavOpen(!isNavOpen)}
